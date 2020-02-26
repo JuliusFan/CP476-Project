@@ -1,18 +1,14 @@
-.columns {
+#chat {
 	height: 80%;
-	background-color: black;
+	background-color: rgb(213, 242, 255);
 }
 
-.columns #users {
-	padding
-	background-color: brown;
+#users {
+	margin: 1em;
+	background-color: rgb(135, 233, 78);
 }
 
-.columns #users {
-	padding
-	background-color: brown;
-}
-
-.columns #messages {
-	background-color: blueviolet;
+#messages {
+	margin: 1em;
+	background-color: rgb(240, 226, 35);
 }
