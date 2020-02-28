@@ -1,14 +1,43 @@
+body {
+	background-color: rgb(240, 228, 228);
+	width: 50%;
+	margin: auto;
+}
+
 #chat {
+	padding: 1%;
 	height: 80%;
-	background-color: rgb(213, 242, 255);
+	background-color: rgb(240, 228, 228);
+}
+
+#rooms {
+	/* margin-top: 1em; */
+	padding: 2em;
+	height: 48%;
+	background-color: rgb(240, 228, 228);
+	background-image: linear-gradient(cyan, royalblue);
 }
 
 #users {
-	margin: 1em;
-	background-color: rgb(135, 233, 78);
+	padding: 2em;
+	margin-top: 2%;
+	height: 48%;
+	background-color: rgb(240, 228, 228);
+	background-image: linear-gradient(cyan, royalblue);
 }
 
 #messages {
-	margin: 1em;
-	background-color: rgb(240, 226, 35);
+	margin-left: 1%;
+	padding: 2em;
+	background-color: rgb(240, 228, 228);
+	background-image: linear-gradient(cyan, royalblue);
 }
+
+#messagesLeft {
+	text-align: left;
+}
+
+#messagesRight {
+	text-align: right;
+}
+
