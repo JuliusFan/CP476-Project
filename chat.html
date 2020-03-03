@@ -7,44 +7,44 @@
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
-	<link rel="stylesheet" href="chat.css">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial|Montserrat" type='text/css'>
 
-	<title>Chat</title>
+	<link rel="stylesheet" href="chat.css" type='text/css'>
+
+	<title>Chatroom</title>
 	</head>
 	<body>
-		<div class="container-fluid">
+		<div id="container" class="container-fluid">
+			<!-- Single page-sized row with 2 columns -->
 			<div class="row">
-				<div class="col">
-					<button type="button" href="#" class="btn btn-default" style='font-size:40px'>
-						<i class='fas fa-home'style="font-size:40px"></i>
-						Chatroom Name
-					</button>
+				<!-- Left side 3 rows -->
+				<div id="leftCol" class="col-sm-3">
+					<div class="row infoBar"> <!-- Back Button Bar -->
+						<button type="button" href="#" class="btn btn-default" style='font-size:24'>
+							<i class="fas fa-angle-left" style="font-size:24"></i>
+							<b>Logout</b>
+						</button>
+					</div>
+					<div class="row roomInfo"> <!-- Users -->
+						e
+					</div>
+					<div class="row roomInfo"> <!-- Chatroom List -->
+						e
+					</div>
+				</div>
+				<!-- Right side 3 rows -->
+				<div id="rightCol" class="col-sm-9">
+					<div class="row infoBar"> <!-- Header bar -->
+						e
+					</div>
+					<div id="messages" class="row"> <!-- Chatroom -->
+						e
+					</div>
+					<div id="sendBar" class="row"> <!-- Send Input -->
+						<i class="fas fa-paper-plane"></i>
+					</div>
 				</div>
 			</div>
-			<div id="chat" class="row">
-				<div class="col rounded">
-					<div id="rooms" class="row">
-						Chatrooms
-					</div>
-					<div id="users" class="row">
-						Users
-					</div>
-				</div>
-    			<div id="messages" class="col-sm-10 rounded">
-					Messages
-					<table>
-						<tr>
-							<th id="messagesLeft">
-								test
-							</th>
-							<th id="messagesRight">
-								test
-							</th>
-						</tr>
-					</table>
-				</div>
-			</div>
-		</div>
 
 		<!-- Optional JavaScript -->
 		<!-- jQuery first, then Popper.js, then Bootstrap JS -->

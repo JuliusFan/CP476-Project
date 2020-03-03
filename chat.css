@@ -1,43 +1,55 @@
 body {
-	/* background-color: rgb(240, 228, 228); */
-	width: 80%;
-	margin: auto;
+	height: 100vh;
+	width: 100vw;
+	/* font-family: "Questrial"; */
+	font-family: "Montserrat";
 }
 
-#chat {
-	padding: 1%;
-	height: 80%;
-	/* background-color: rgb(240, 228, 228); */
+#container {
+	background-color: white;
 }
 
-#rooms {
-	/* margin-top: 1em; */
-	padding: 2em;
-	height: 48%;
-	background-color: rgb(240, 228, 228);
-	background-image: linear-gradient(cyan, royalblue);
+#leftCol {
+	height: 100vh;
+	width: 100vw;
+	background-color: white;
 }
 
-#users {
-	padding: 2em;
-	margin-top: 2%;
-	height: 48%;
-	background-color: rgb(240, 228, 228);
-	background-image: linear-gradient(cyan, royalblue);
+#rightCol {
+	height: 100vh;
+	width: 100vw;
+	background-color: rgb(66, 194, 153);
+}
+
+.infoBar {
+	
+}
+
+.roomInfo {
+
 }
 
 #messages {
-	margin-left: 1%;
-	padding: 2em;
-	background-color: rgb(240, 228, 228);
-	background-image: linear-gradient(cyan, royalblue);
+
 }
 
-#messagesLeft {
-	text-align: left;
+#sendBar {
+	
 }
 
-#messagesRight {
-	text-align: right;
-}
+/* font-weights
+ * Thin            100     
+ * Extra Light     200
+ * Light           300
+ * Regular         400
+ * Medium          500
+ * Semi-Bold       600
+ * Bold            700
+ * Black           900
+ */
 
+/* CSS Selectors
+ * .class
+ * #id
+ * div (elements)
+ */
