@@ -1,5 +1,5 @@
 <html lang="en">
-	<head>w
+	<head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -15,7 +15,7 @@
 			<!-- Single page-sized row with 2 columns -->
 			<div class="row">
 				<!-- Left side 3 rows -->
-				<div id="leftCol" class="col-sm-2">
+				<div id="leftCol" class="col-lg-2">
 					 <!-- Back Button Bar -->
 					<div id="leftInfoBar" class="row">
 						<button type="button" onclick="window.location.href='#'" class="btn btn-default" style='font-size:24'>
@@ -25,53 +25,358 @@
 					</div>
 					 <!-- Users -->
 					<div class="row roomInfo">
-						Users
-						<p>
-							User 1
-						</p>
-						<p>
-							User 2
-						</p>
+						<!-- <div class="stacking"> -->
+							<div class="leftTableParent">
+								<table id="userTable" class="table table-borderless table-hover">
+									<thead>
+										<h2>Connected Users</h2>
+									</thead>
+									<tbody class="table-hover">
+										<tr>
+											<td>
+												User 1
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 2
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 3
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 4
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 5
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 6
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 7
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 8
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 9
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 10
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 11
+											</td>
+										</tr>
+										<tr>
+											<td>
+												User 12
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+						<!-- </div> -->
 					</div>
 					<!-- Chatroom List -->
 					<div class="row roomInfo">
-						Rooms
-						<p>
-							Room 1
-						</p>
-						<p>
-							Room 2
-						</p>
-					</div>
-				</div>
-				<!-- Middle 3 rows -->
-				<div id="middleCol" class="col-sm-6">
-					<!-- Header bar -->
-					<div id="rightInfoBar" class="row text-center">
-						<p>Chatroom Name</p>
-					</div>
-					<!-- Chatroom -->
-					<div id="messages" class="row">
-						Messages
-					</div>
-					<!-- Send Input -->
-					<div id="sendBar" class="row">
-						<!-- <i class="fas fa-paper-plane"></i> -->
-						<!-- <i class="fas fa-greater-than"></i> -->
-
-						<div class="input-group mb-3">
-							<input type="text" class="form-control border-0 rounded-0" placeholder="Enter message" aria-label="Enter message to send" aria-describedby="msgTarget">
-							<div class="input-group-append">
-								<!-- <button type="button" onclick="window.location.href='#'" class="btn btn-light" > -->
-									<!-- <i id="msgTarget" class="fas fa-paper-plane"></i> -->
-									<!-- <i class="fas fa-greater-than"></i> -->
-								<!-- </button> -->
+						<div class="stacking">
+							<div class="leftTableParent">
+								<table id="roomTable" class="table table-borderless table-hover">
+									<thead>
+										<h2>Rooms</h2>
+									</thead>
+									<tbody>
+										<tr>
+											<td>
+												Chatroom Name
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 2
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 3
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 4
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 5
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 6
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 7
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 8
+											</td>
+										</tr>
+										<tr>
+											<td>
+												Room 9
+											</td>
+										</tr>
+									</tbody>
+								</table>
 							</div>
 						</div>
 					</div>
 				</div>
-				<!-- Empty right side to hold space on large monitors -->
-				<div id="rightCol" class="col-sm-4"></div>
+				<!-- Middle 3 rows -->
+				<div id="middleCol" class="col-lg-8">
+					<!-- Header bar -->
+					<div id="middleInfoBar" class="row">
+						<h1>Chatroom Name</h1>
+					</div>
+					<!-- Chatroom -->
+					<div id="messages" class="row">
+						<div class="rightTableParent">
+							<table id="messageTable" class="table table-striped table-borderless">
+								<tbody>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 3
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 1
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+									<tr>
+										<td>
+											User 2
+										</td>
+										<td>
+											Message Message Message Message Message Message Message Message  
+										</td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+
+					<!-- Send Input -->
+					<div id="sendBar" class="row">
+						<!-- <i class="fas fa-paper-plane"></i> -->
+						<!-- <i class="fas fa-greater-than"></i> -->
+						<div class="inputBar input-group mb-3">
+							<div class="input-group-prepend">
+								<button type="button" onclick="window.location.href='#'">
+									<i class="fas fa-paper-plane"></i>
+								</button>
+							</div>
+							<input type="text" class="form-control border-0 rounded-0" placeholder="Enter message" aria-label="Enter message to send" aria-describedby="msgTarget">
+						</div>
+					</div>
+				</div>
 			</div>
 
 		<!-- Optional JavaScript -->
