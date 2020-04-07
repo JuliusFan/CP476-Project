@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project - Login & Register</title>
+
+   <link href="reg_log.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial" type='text/css'>
+   <script type="text/javascript" src="reg_log.js"></script>
+</head>
+<body>
+    <h1 class="header">Login</h1>
+
+    <form action="" method="post">
+    <table>
+        <tr>
+            <td>
+                <b>Login Name</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="log_name" class="textfield">
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Password</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" name="password" class="textfield">
+            </td>
+        </tr>
+    </table>
+
+    <input type="submit" value="Login" class="button" id="log_button">
+    </form>
+
+    <hr>
+
+    <h1 class="header">Register</h1>
+
+    <form action="" method="post">
+    <table>
+        <tr>
+            <td>
+                <b>Login Name</b>
+            </td>
+            <td>
+                <b>Chat Name (Seen by others)</b>
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <input type="text" name="log_name" class="textfield" id="reg_login" placeholder="at least 1 character">
+            </td>
+            <td>
+                <input type="text" name="chat_name" class="textfield" id="reg_cname" placeholder="at least 1 character">
+            </td>
+            
+        </tr>
+        <tr>
+            <td>
+                <b>Password</b>
+            </td>
+            <td>
+                <b>Color</b>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <input type="password" name="password" class="textfield" id="reg_pw" placeholder="at least 4 characters">
+            </td>
+            <td>
+                <input type="color" name="color" class="colorpicker">
+            </td>
+        </tr>
+    </table>
+    
+    <input type="submit" value="Register" class="button" id="reg_button">
+    </form>
+</body>
+</html>
