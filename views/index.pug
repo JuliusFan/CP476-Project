@@ -5,33 +5,46 @@ block styles
 	link(rel='stylesheet', href='/stylesheets/index.css')
 	
 block content
-	//- .jumbotron.text-center
-	h1 #{title}
-	p #{about}
-	form(method="POST" action="/login")
-		//- .form-group
-		//- 	//- label(for='email') Email:
-		//- 	input#email.form-control(type='text', placeholder="Email")
-
-		//- .form-group
-		//- 	//- label(for='password') Password:
-		//- 	input#password.form-control(type='password', placeholder="Password")
-
-		//- 	p Show Password:
-		//- 		input#checkId(type="checkbox", onclick="showPassword('checkId', 'password')")
-
-		//- #Save.btn-group
-		//- 	button.btn.btn-primary Login
-		//- 	button.btn.btn-light(type="reset") Reset
-
+	h1.header Login
+	form(action='')
 		table
-			tr
-				td Login Name
-			tr
-				td
-					input.textfield(type="text" name="name")
-			tr
-				
-
-
-	form(method="POST" action="/register")
+			tbody
+				tr
+					td
+						b Login Name
+				tr
+					td
+						input.textfield(type='text', name='log_name')
+				tr
+					td
+						b Password
+				tr
+					td
+						input.textfield(type='password', name='password')
+		input.button(type='submit', value='Login')
+	hr
+	h1.header Register
+	form(action='')
+		table
+			tbody
+				tr
+					td
+						b Login Name
+					td
+						b Chat Name (Seen by others)
+				tr
+					td
+						input.textfield(type='text', name='log_name')
+					td
+						input.textfield(type='text', name='chat_name')
+				tr
+					td
+						b Password
+					td
+						b Color
+				tr
+					td
+						input.textfield(type='password', name='password')
+					td
+						input.colorpicker(type='color', name='color')
+		input.button(type='submit', value='Register')
