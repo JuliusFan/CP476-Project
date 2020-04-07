@@ -1,0 +1,37 @@
+extends layout
+
+block styles
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Questrial" type='text/css'>
+	link(rel='stylesheet', href='/stylesheets/index.css')
+	
+block content
+	//- .jumbotron.text-center
+	h1 #{title}
+	p #{about}
+	form(method="POST" action="/login")
+		//- .form-group
+		//- 	//- label(for='email') Email:
+		//- 	input#email.form-control(type='text', placeholder="Email")
+
+		//- .form-group
+		//- 	//- label(for='password') Password:
+		//- 	input#password.form-control(type='password', placeholder="Password")
+
+		//- 	p Show Password:
+		//- 		input#checkId(type="checkbox", onclick="showPassword('checkId', 'password')")
+
+		//- #Save.btn-group
+		//- 	button.btn.btn-primary Login
+		//- 	button.btn.btn-light(type="reset") Reset
+
+		table
+			tr
+				td Login Name
+			tr
+				td
+					input.textfield(type="text" name="name")
+			tr
+				
+
+
+	form(method="POST" action="/register")
