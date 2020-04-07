@@ -1,0 +1,233 @@
+extends layout
+
+block content
+	#container.container-fluid
+		// Single page-sized row with 2 columns
+		.row
+			// Left side 3 rows
+			#leftCol.col-lg-2
+				// Back Button Bar
+				#leftInfoBar.row
+					button.btn.btn-default(type='button', onclick="window.location.href='#'", style='font-size:24')
+						i.fas.fa-angle-left
+						| 							Logout
+				// Users
+				.row.roomInfo
+					// <div class="stacking">
+					.leftTableParent
+						h2 Connected Users
+						table#userTable.table.table-borderless.table-hover
+							thead
+							tbody.table-hover
+								tr
+									td
+										| User 1
+								tr
+									td
+										| User 2
+								tr
+									td
+										| User 3
+								tr
+									td
+										| User 4
+								tr
+									td
+										| User 5
+								tr
+									td
+										| User 6
+								tr
+									td
+										| User 7
+								tr
+									td
+										| User 8
+								tr
+									td
+										| User 9
+								tr
+									td
+										| User 10
+								tr
+									td
+										| User 11
+								tr
+									td
+										| User 12
+					// </div>
+					// Chatroom List
+					.row.roomInfo
+						.stacking
+							.leftTableParent
+								h2 Rooms
+								table#roomTable.table.table-borderless.table-hover
+									thead
+									tbody
+										tr
+											td
+												| Chatroom Name
+										tr
+											td
+												| Room 2
+										tr
+											td
+												| Room 3
+										tr
+											td
+												| Room 4
+										tr
+											td
+												| Room 5
+										tr
+											td
+												| Room 6
+										tr
+											td
+												| Room 7
+										tr
+											td
+												| Room 8
+										tr
+											td
+												| Room 9
+			// Middle 3 rows
+			#middleCol.col-lg-8
+				// Header bar
+				#middleInfoBar.row
+					h1 Chatroom Name
+				// Chatroom
+				#messages.row
+					.rightTableParent
+						table#messageTable.table.table-striped.table-borderless
+							tbody
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 3
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 1
+									td
+										| Message Message Message Message Message Message Message Message
+								tr
+									td
+										| User 2
+									td
+										| Message Message Message Message Message Message Message Message
+				// Send Input
+				#sendBar.row
+					// <i class="fas fa-paper-plane"></i>
+					// <i class="fas fa-greater-than"></i>
+					.inputBar.input-group.mb-3
+						.input-group-prepend
+							button(type='button', onclick="window.location.href='#'")
+								i.fas.fa-paper-plane
+						input.form-control.border-0.rounded-0(type='text', placeholder='Enter message', aria-label='Enter message to send', aria-describedby='msgTarget')
+
+block styles
+	// Bootstrap CSS
+	link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.7.0/css/all.css', integrity='sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ', crossorigin='anonymous')
+	link(rel='stylesheet', href='/stylesheets/chat.css')
