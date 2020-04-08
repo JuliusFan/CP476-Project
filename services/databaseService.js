@@ -9,13 +9,11 @@ if (typeof process.env.MONGODB_URI == 'undefined') {
 	uri = process.env.MONGODB_URI;
 }
 
-mongoose.connect(uri, {useNewUrlParser: true});
+mongoose.connect(uri, {useNewUrlParser: true, useUnifiedTopology: true});
 
 let userSchema = new mongoose.Schema({
-	name: {type: String, required: true},
-	email: {type: String, required: true},
-	password: {type: String, required: true},
-	bookmarks: [{type: String}]
+	username: {type: String, required: true},
+	password: {type: String, required: true}
 });
 
 let messageSchema = new  mongoose.Schema({

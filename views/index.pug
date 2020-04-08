@@ -23,38 +23,23 @@ block content
 				#middleInfoBar.row
 					h1 Internet Computing Chat App by Julian and Julius
 				#login.row
-					form(action='/chat' method='POST')
-						.form-group
-							label(for="loginName") Login
-							.input-group
-								.input-group-prepend
-									.input-group-text Username
-								input.form-control(type="text", id="loginName" placeholder="Enter your username")
-						.form-group
-							.input-group
-								.input-group-prepend
-									.input-group-text Password
-								input.form-control(type="password", id="loginPassword" placeholder="Enter your password")
-						.form-group
-							button.btn Login 
-								i.fas.fa-sign-in-alt
-					form(disabled)
-					form(disabled)
-					// Register
 					form(action='/' method='POST')
 						.form-group
-							label(for="registerName") Register
+						.form-group
+							label Login
 							.input-group
 								.input-group-prepend
 									.input-group-text Username
-								input.form-control(type="text", id="registerName" placeholder="Enter a username")
+								input.form-control(type="text", name="username" placeholder="Enter your username")
+							small.form-text.text-danger= errorUsername
 						.form-group
 							.input-group
 								.input-group-prepend
 									.input-group-text Password
-								input.form-control(type="password", id="loginPassword" placeholder="Enter a password")
+								input.form-control(type="password", name="password" placeholder="Enter your password")
+							small.form-text.text-danger= errorPassword
 						.form-group
-							button.btn Register 
+							button.btn Login 
 								i.fas.fa-sign-in-alt
 				#middleInfoBar.row
 				
