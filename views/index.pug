@@ -16,6 +16,12 @@ block content
 		.row
 			// Empty left column
 			#leftCol.col-lg-2
+				// Back Button Bar
+				#leftInfoBar.row
+					form(action="/register" method="GET")
+						button.btn
+							i.fas.fa-door-open
+							|  Register
 
 			// Middle 3 rows
 			#middleCol.col-lg-8

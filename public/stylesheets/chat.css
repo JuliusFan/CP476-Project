@@ -7,14 +7,15 @@ body {
 	/* font-weight: 100; */
 }
 
-#container .row {
-	margin: 0;
-}
-
 #container {
 	background-color: white;
 	padding: 0;
 }
+
+#container .row {
+	margin: 0;
+}
+
 
 #leftCol {
 	height: 100vh;

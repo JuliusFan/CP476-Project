@@ -16,7 +16,13 @@ block content
 		.row
 			// Empty left column
 			#leftCol.col-lg-2
-
+				// Back Button Bar
+				#leftInfoBar.row
+					form(action="/login" method="GET")
+						button.btn
+							i.fas.fa-door-open
+							|  Login
+							
 			// Middle 3 rows
 			#middleCol.col-lg-8
 				// Register
@@ -38,7 +44,7 @@ block content
 								input.form-control(type="password", name="password" placeholder="Enter your password")
 							small.form-text.text-danger= errorPassword
 						.form-group
-							button.btn Register
+							button.btn Register 
 								i.fas.fa-sign-in-alt
 				#middleInfoBar.row
 				
