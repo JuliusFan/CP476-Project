@@ -7,8 +7,13 @@ body {
 	/* font-weight: 100; */
 }
 
+#container .row {
+	margin: 0;
+}
+
 #container {
 	background-color: white;
+	padding: 0;
 }
 
 #leftCol {
@@ -27,7 +32,6 @@ body {
 /* #leftInfoBar form {
 	height: 100%;
 	width: 100%;
-	padding:
 } */
 
 .roomInfo {
@@ -59,46 +63,6 @@ body {
 	overflow-y: auto;
 }
 
-/* #userTable { */
-	/* margin: 0; */
-	/* height: 100%; */
-	/* width: 50%; */
-	/* overflow: scroll; */
-/* } */
-
-/* #userTable tbody { */
-	/* height: 50%; */
-	/* width: 100%; */
-	/* overflow-y: scroll; */
-	/* box-sizing: content-box; */
-/* } */
-
-/* TODO: table heights */
-/* .scroll-thead{
-    width: 100%;
-    display: inline-table;
-}
-
-.scroll-tbody-y
-{
-    display: block;
-    overflow-y: scroll;
-}
-
-.table-body{
-    height: 100%;
-} */
-
-/* .scrollBar {
-	height: 80%;
-	overflow: auto;
-} */
-
-/* .tableParent { */
-	/* display: block; */
-	/* max-height: 100%; */
-/* } */
-
 #middleCol {
 	height: 100vh;
 	padding: 0;
@@ -122,6 +86,7 @@ body {
 	background-repeat: no-repeat;
 	background-attachment: fixed;
 	background-position: center;
+	overflow-y: auto;
 }
 
 .rightTableParent {
@@ -132,7 +97,7 @@ body {
 	font-size: 24px;
 	max-height: 100%;
 	color: white;
-	margin: 0;	
+	margin: 0;
 }
 
 .rightTableParent td:nth-child(1) {  
@@ -140,7 +105,7 @@ body {
 }
 
 #sendBar {
-	background-color: red;
+	background-color: white;
 	height: 5%;	
 	width: 100%;
 	padding: 0;
@@ -149,17 +114,24 @@ body {
 
 #sendBar .inputBar {
 	height: 100%;
+	margin: 0 !important;
+	background-color: black;
 }
 
-#sendbar .input-group-prepend {
-	width: 3%;
+.input-group-prepend {
+	width: 100%;
+	background-color: red;
 }
 
 #sendBar button {
-	width: 100%; 
 	height: 100%;
-	font-size: 24px;
+	padding-left: 1%;
+	padding-right: 1%;
 }
+/* 
+#sendBar i {
+
+} */
 
 #sendBar form {
 	margin: 0;
@@ -224,3 +196,43 @@ label:focus,
  * #id
  * div (elements)
  */
+
+ /* #userTable { */
+	/* margin: 0; */
+	/* height: 100%; */
+	/* width: 50%; */
+	/* overflow: scroll; */
+/* } */
+
+/* #userTable tbody { */
+	/* height: 50%; */
+	/* width: 100%; */
+	/* overflow-y: scroll; */
+	/* box-sizing: content-box; */
+/* } */
+
+/* TODO: table heights */
+/* .scroll-thead{
+    width: 100%;
+    display: inline-table;
+}
+
+.scroll-tbody-y
+{
+    display: block;
+    overflow-y: scroll;
+}
+
+.table-body{
+    height: 100%;
+} */
+
+/* .scrollBar {
+	height: 80%;
+	overflow: auto;
+} */
+
+/* .tableParent { */
+	/* display: block; */
+	/* max-height: 100%; */
+/* } */
