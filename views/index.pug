@@ -23,26 +23,38 @@ block content
 				#middleInfoBar.row
 					h1 Internet Computing Chat App by Julian and Julius
 				#login.row
-					form(action='/' method='POST')
+					form(action='/chat' method='POST')
 						.form-group
-							label(for="loginName") Username
-							input.form-control(type="text", id="loginName" placeholder="Enter your username")
+							label(for="loginName") Login
+							.input-group
+								.input-group-prepend
+									.input-group-text Username
+								input.form-control(type="text", id="loginName" placeholder="Enter your username")
 						.form-group
-							label(for="loginPassword") Password
-							input.form-control(type="password", id="loginPassword" placeholder="Enter your password")
+							.input-group
+								.input-group-prepend
+									.input-group-text Password
+								input.form-control(type="password", id="loginPassword" placeholder="Enter your password")
 						.form-group
 							button.btn Login 
 								i.fas.fa-sign-in-alt
+					form(disabled)
+					form(disabled)
 					// Register
 					form(action='/' method='POST')
 						.form-group
-							label(for="registerName") Username
-							input.form-control(type="text", id="registerName" placeholder="Enter your username")
+							label(for="registerName") Register
+							.input-group
+								.input-group-prepend
+									.input-group-text Username
+								input.form-control(type="text", id="registerName" placeholder="Enter a username")
 						.form-group
-							label(for="loginPassword") Password
-							input.form-control(type="password", id="loginPassword" placeholder="Enter your password")
+							.input-group
+								.input-group-prepend
+									.input-group-text Password
+								input.form-control(type="password", id="loginPassword" placeholder="Enter a password")
 						.form-group
-							button.btn Login 
+							button.btn Register 
 								i.fas.fa-sign-in-alt
 				#middleInfoBar.row
 				
