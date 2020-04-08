@@ -19,24 +19,26 @@ block content
 
 			// Middle 3 rows
 			#middleCol.col-lg-8
-				// Login
+				// Register
 				#middleInfoBar.row
 					h1 Internet Computing Chat App by Julian and Julius
 				#login.row
-					form(action='/login' method='POST')
+					form(action='/register' method='POST')
 						.form-group
-							label Login
+							label Register
 							.input-group
 								.input-group-prepend
 									.input-group-text Username
 								input.form-control(type="text", name="username" placeholder="Enter your username")
+							small.form-text.text-danger= errorUsername
 						.form-group
 							.input-group
 								.input-group-prepend
 									.input-group-text Password
 								input.form-control(type="password", name="password" placeholder="Enter your password")
+							small.form-text.text-danger= errorPassword
 						.form-group
-							button.btn=title 
+							button.btn Register
 								i.fas.fa-sign-in-alt
 				#middleInfoBar.row
 				
