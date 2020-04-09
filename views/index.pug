@@ -15,19 +15,17 @@ block content
 		// Single page-sized row with 3 columns
 		.row
 			// Empty left column
-			#leftCol.col-lg-2
+			#leftCol.col-2
 				// Back Button Bar
 				#leftInfoBar.row
 					form(action="/register" method="GET")
-						button.btn
+						button.btn.text-nowrap Register
 							i.fas.fa-door-open
-							|  Register
 
 			// Middle 3 rows
-			#middleCol.col-lg-8
-				// Login
+			#middleCol.col-8
 				#middleInfoBar.row
-					h1 Internet Computing Chat App by Julian and Julius
+					h1.text-nowrap Internet Computing Chat App by Julian and Julius
 				#login.row
 					form(action='/login' method='POST')
 						.form-group
@@ -47,4 +45,4 @@ block content
 				#middleInfoBar.row
 				
 			// Empty right column
-			#rightCol.col-lg-2
+			#rightCol.col-2
