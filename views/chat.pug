@@ -19,9 +19,10 @@ block content
 				// Back Button Bar
 				#leftInfoBar.row
 					form(action='/logout' method='POST')
-						button.btn.btn-default
+						button.btn.text-nowrap
 							i.fas.fa-angle-left
-							|  Logout
+							d-none.d-sm-inline  Logout
+
 				// Users
 				.row.roomInfo
 					.leftTableParent

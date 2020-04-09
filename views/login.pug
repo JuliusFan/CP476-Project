@@ -8,7 +8,7 @@ block scripts
 	script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
 	script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
 	script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
-	link(rel='stylesheet', href="/stylesheets/index.css")
+	link(rel='stylesheet', href="/stylesheets/login.css")
 	
 block content
 	#container.container-fluid
@@ -19,11 +19,13 @@ block content
 				// Back Button Bar
 				#leftInfoBar.row
 					form(action="/register" method="GET")
-						button.btn.text-nowrap Register
+						button.btn.text-nowrap 
 							i.fas.fa-door-open
+							d-none.d-sm-inline  Register
 
 			// Middle 3 rows
 			#middleCol.col-8
+				// Login
 				#middleInfoBar.row
 					h1.text-nowrap Internet Computing Chat App by Julian and Julius
 				#login.row

@@ -4,19 +4,22 @@ let express = require('express');
 let router = express.Router();
 let passport = require('passport');
 
-/* GET home page. */
+// If no URL parameters, redirect to login route
 router.get('/', function(req, res, next) {
 	res.redirect("/login");
 });
 
+// Default page: login page
 router.get('/login', function(req, res, next) {
+	// If user is already logged in, redirect to chat page
 	if (req.isAuthenticated()) {
 		res.redirect('/chat');
 	} else {
-		res.render('index', { title: 'Login' });
+		res.render('login', { title: 'Login' });
 	}
 });
 
+// Login logic, validates credentials with database using Passport.js
 router.post('/login', passport.authenticate('local', { failureRedirect: '/login', successRedirect: "/chat" }), function(req, res, next) {
 	res.render("chat", { title: 'Login' });
 });

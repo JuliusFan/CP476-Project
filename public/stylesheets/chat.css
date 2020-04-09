@@ -27,6 +27,7 @@ body {
 }
 
 #leftInfoBar button {
+	border: 0;
 	font-size: 24px;
 }
 
