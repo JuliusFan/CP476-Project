@@ -6,9 +6,9 @@ let passport = require('passport');
 let connected = require('connect-ensure-login')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
+router.get('/',  (req, res, next) => {
 	if (req.isAuthenticated()) {
-		res.render('chat', { title: 'Chat' });
+		res.render('chat', { title: 'Chat', chatroom: "Cook Rice", username: req.user.username});
 	} else {
 		res.redirect("/");
 	}	

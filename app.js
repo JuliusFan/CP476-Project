@@ -10,9 +10,12 @@ let session = require('express-session')
 let passport = require('passport');
 let favicon = require('serve-favicon');
 let Strategy = require('passport-local').Strategy;
-let User = require("./services/databaseService").User;
+
+// Project files
+let User = require("./models/User");
 let bcryptService = require("./services/bcryptService");
 
+// Routers
 let loginRouter = require('./routes/login');
 let chatRouter = require('./routes/chat');
 let registerRouter = require('./routes/register');

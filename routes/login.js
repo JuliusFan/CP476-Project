@@ -20,10 +20,11 @@ router.get('/login', function(req, res, next) {
 });
 
 // Login logic, validates credentials with database using Passport.js
-router.post('/login', passport.authenticate('local', { failureRedirect: '/login', successRedirect: "/chat" }), function(req, res, next) {
-	res.render("chat", { title: 'Login' });
+router.post('/login', passport.authenticate('local', { failureRedirect: '/login'}), function(req, res, next) { // , successRedirect: "/chat" 
+	res.redirect("/chat");
 });
 
+// If user tries to go to /logout page, it'll redirect to /login
 router.post('/logout', function(req, res, next) {
 	req.logout();
 	res.redirect('/login');
