@@ -3,7 +3,7 @@
 let express = require('express');
 let router = express.Router();
 let bcryptService = require("../services/bcryptService")
-let User = require("../services/databaseService").User;
+let User = require("../models/User")
 
 router.get('/', function(req, res, next) {
 	// If user is already logged in, redirect to chat page
@@ -38,7 +38,6 @@ router.post('/', async function(req, res, next) {
 			await user.save();
 			res.redirect("/login");
 		}
-
 	// User exists already, cannot overwrite username
 	} else {
 		res.render("register", { title: 'Login', errorUsername: "Username already exists."});

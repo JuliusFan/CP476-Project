@@ -8,6 +8,8 @@ block scripts
 	script(src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous")
 	script(src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous")
 	script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous")
+	script(type='text/javascript' src='/socket.io/socket.io.js')
+	script(type='text/javascript', src="/javascripts/chat.js")
 	link(rel='stylesheet', href="/stylesheets/chat.css")
 	
 block content
@@ -135,152 +137,22 @@ block content
 			#middleCol.col-8
 				// Header bar
 				#middleInfoBar.row
-					h1.text-nowrap Cook Rice
+					h1.text-nowrap Connected to #{chatroom} as&nbsp;
+					h1#username #{username}
 				// Chatroom
 				#messages.row
 					.rightTableParent
 						table#messageTable.table.table-striped.table-borderless
 							tbody
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 3
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 1
-									td
-										| Message Message Message Message Message Message Message Message
-								tr
-									td
-										| User 2
-									td
-										| Message Message Message Message Message Message Message Message
 				// Send Input
 				#sendBar.row
-					form(action='/chat' method='POST')
-						.inputBar.input-group.mb-3
-							.input-group-prepend
-								button
-									i.fas.fa-paper-plane
-								input.form-control.border-0.rounded-0(name="message" type='text' placeholder='Enter message' aria-label='Enter message to send' aria-describedby='msgTarget')
-
-
-
+					.inputBar.input-group.mb-3
+						.input-group-prepend
+							button#sendButton
+								i.fas.fa-paper-plane
+							input#messageBox.form-control.border-0.rounded-0(placeholder='Enter message to send', autocomplete="off")
 	
+	noscript
+		h3
+			| You must have JavaScript enabled in order to use this order form. Please enable JavaScript and then reload this page in order to continue.
+		meta(http-equiv='refresh', content='0;url="error"')

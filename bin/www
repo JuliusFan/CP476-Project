@@ -1,18 +1,22 @@
 #!/usr/bin/env node
+"use strict";
 
 /**
  * Module dependencies.
  */
 
-var app = require('../app');
-var debug = require('debug')('cp476t:server');
-var http = require('http');
+let app = require('../app');
+let debug = require('debug')('cp476t:server');
+let http = require('http');
+let User = require("../models/User");
+let Message = require("../models/Message");
+
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+let port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
 
 /**
@@ -35,7 +39,7 @@ server.on('listening', onListening);
  */
 
 function normalizePort(val) {
-	var port = parseInt(val, 10);
+	let port = parseInt(val, 10);
 
 	if (isNaN(port)) {
 		// named pipe
@@ -59,7 +63,7 @@ function onError(error) {
 		throw error;
 	}
 
-	var bind = typeof port === 'string'
+	let bind = typeof port === 'string'
 		? 'Pipe ' + port
 		: 'Port ' + port;
 
@@ -83,9 +87,44 @@ function onError(error) {
  */
 
 function onListening() {
-	var addr = server.address();
-	var bind = typeof addr === 'string'
+	let addr = server.address();
+	let bind = typeof addr === 'string'
 		? 'pipe ' + addr
 		: 'port ' + addr.port;
 	debug('Listening on ' + bind);
 }
+
+// SocketIO
+io.on('connection', async (socket) => {
+	console.log('Server: user connected');
+
+	socket.on('disconnect', function () {
+		console.log('Server: User disconnected');
+	});
+
+	// initial sending of messages from database
+	for await (let message of Message.find()) {
+		socket.emit("loadChatroom", message);
+	}	
+
+	// Sending message: saves to DB and signals other sockets of new message
+	socket.on('chat', async (msg, username, time) => {
+		let user = await User.find({username: username}).lean();
+		let message = new Message({
+			message: msg,
+			username: username,
+			userId: user[0]._id,
+			time: time
+		});
+		// Saves message (validation already checked)
+		await message.save((err, output) => {
+			if (err) {
+				console.log("Message not saved: " + err.message);
+			} else {
+				console.log("Message saved: " + output.message);
+			}
+		});
+		// Emiting to other clients using chatroom
+		socket.broadcast.emit("loadChatroom", message);
+	});
+});

@@ -130,12 +130,8 @@ body {
 	padding-left: 1%;
 	padding-right: 1%;
 }
-/* 
-#sendBar i {
 
-} */
-
-#sendBar form {
+#sendBar .inputBar {
 	margin: 0;
 	width: 100%;
 	height: 100%;
