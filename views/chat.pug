@@ -30,57 +30,22 @@ block content
 					.leftTableParent
 						table#userTable.table.table-borderless.table-hover
 							thead
-								h2 Connected Users
+								h2.text-nowrap Users Online
 							tbody.table-hover
 								tr
-									td
-										| User 1
+									td#username
+										| #{username}
 								tr
 									td
 										| User 2
-								tr
-									td
-										| User 3
-								tr
-									td
-										| User 4
-								tr
-									td
-										| User 5
-								tr
-									td
-										| User 6
-								tr
-									td
-										| User 7
-								tr
-									td
-										| User 1
-								tr
-									td
-										| User 2
-								tr
-									td
-										| User 3
-								tr
-									td
-										| User 4
-								tr
-									td
-										| User 5
-								tr
-									td
-										| User 6
-								tr
-									td
-										| User 7
+						
 								
 				// Chatroom List
-				.row.roomInfo
+				//- .row.roomInfo
 					.leftTableParent
 						table#roomTable.table.table-borderless.table-hover
 							thead
-								h2 Rooms
+								h2.text-nowrap Rooms
 							tbody
 								tr
 									td
@@ -137,8 +102,7 @@ block content
 			#middleCol.col-8
 				// Header bar
 				#middleInfoBar.row
-					h1.text-nowrap Connected to #{chatroom} as&nbsp;
-					h1#username #{username}
+					h1.text-nowrap Connected to #{chatroom}
 				// Chatroom
 				#messages.row
 					.rightTableParent
