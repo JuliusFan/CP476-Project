@@ -1,6 +1,7 @@
 const socket = io();
 
 $(document).ready(async () => {	
+	let username = $("#username").text();
 	/* Chatbox functions */
 	// Gets initial messages from server
 	socket.on("loadChatroom", (msg) => {
@@ -10,9 +11,12 @@ $(document).ready(async () => {
 		$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>");	
 	});
 
+	socket.on("join", (username) => {
+		$("#userTable").append("<tr<td>" + username + "</td></tr>");
+	})
+
 	// Sending input box' message on send button press
 	$("#sendButton").on("click", async () => {
-		let username = $("#username").text();
 		let message = $('#messageBox').val();
 		if (username && message) {
 			$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
