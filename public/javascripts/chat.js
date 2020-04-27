@@ -2,6 +2,18 @@ const socket = io();
 
 $(document).ready(async () => {	
 	let username = $("#username").text();
+	
+	// Sending name to userlist
+	socket.emit("join", username);
+
+	socket.on("join", (username) => {
+		$("#userTable").append("<tr id='" + username + "'><td>" + username + "</td></tr>");
+	})
+
+	socket.on("updateUserList", (user) => {
+		$("#" + user).remove();
+	});
+
 	/* Chatbox functions */
 	// Gets initial messages from server
 	socket.on("loadChatroom", (msg) => {
@@ -9,11 +21,7 @@ $(document).ready(async () => {
 		let message = msg.message;
 		let time = msg.time;
 		$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>");	
-	});
-
-	socket.on("join", (username) => {
-		$("#userTable").append("<tr<td>" + username + "</td></tr>");
-	})
+	});	
 
 	// Sending input box' message on send button press
 	$("#sendButton").on("click", async () => {
@@ -38,3 +46,4 @@ $(document).ready(async () => {
 		}
 	});
 });
+

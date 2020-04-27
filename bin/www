@@ -94,12 +94,33 @@ function onListening() {
 	debug('Listening on ' + bind);
 }
 
+// Server tracking usernames and socket ids
+let usernames = {};
+let userIds = {};
+
 // SocketIO
 io.on('connection', async (socket) => {
-	console.log('Server: user connected');
+	// Server notification when a client connects to Socket.IO
+	console.log("Server: user connected");
 
-	socket.on('disconnect', function (user) {
-		console.log("Server: " + user + " disconnected");
+	// User joins: updates dictionaries of usernames and emits to all users' online user lists
+	socket.on("join", (username) => {
+		for (let username in usernames) {
+			socket.emit("join", username);
+		}
+		usernames[username] = socket.id;
+		userIds[socket.id] = username;
+		socket.emit("join", username);
+		socket.broadcast.emit("join", username);
+	});
+
+	// User disconnects: deletes value of username from dictionary and triggers line removal of user
+	socket.on('disconnect', async () => {
+		let username = userIds[socket.id];
+		delete userIds[socket.id];
+		delete usernames[username];
+		await socket.broadcast.emit("updateUserList", username);
+		console.log("Server: " + username + " disconnected");
 	});
 
 	// initial sending of messages from database
@@ -119,9 +140,9 @@ io.on('connection', async (socket) => {
 		// Saves message (validation already checked)
 		await message.save((err, output) => {
 			if (err) {
-				console.log("Message not saved: " + err.message);
+				console.log("Message by " + username + " not saved: " + err.message);
 			} else {
-				console.log("Message saved: " + output.message);
+				console.log("Message by " + username + " saved: " + output.message);
 			}
 		});
 		// Emiting to other clients using chatroom

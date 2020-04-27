@@ -27,17 +27,11 @@ block content
 
 				// Users
 				.row.roomInfo
-					.leftTableParent
+					.leftTableParent#userTableParent
 						table#userTable.table.table-borderless.table-hover
 							thead
 								h2.text-nowrap Users Online
-							tbody.table-hover
-								tr
-									td#username
-										| #{username}
-								tr
-									td
-										| User 2
+							tbody
 				// Chatroom List
 				//- .row.roomInfo
 					.leftTableParent
@@ -100,7 +94,8 @@ block content
 			#middleCol.col-8
 				// Header bar
 				#middleInfoBar.row
-					h1.text-nowrap Connected to #{chatroom}
+					h1.text-nowrap Connected to #{chatroom} as&nbsp;
+					h1#username #{username}
 				// Chatroom
 				#messages.row
 					.rightTableParent

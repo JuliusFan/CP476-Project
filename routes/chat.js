@@ -8,7 +8,7 @@ let connected = require('connect-ensure-login')
 /* GET users listing. */
 router.get('/',  (req, res, next) => {
 	if (req.isAuthenticated()) {
-		res.render('chat', { title: 'Chat', chatroom: "Cook Rice", username: req.user.username});
+		res.render('chat', { title: 'Chat', chatroom: "Chatroom", username: req.user.username});
 	} else {
 		res.redirect("/");
 	}	
