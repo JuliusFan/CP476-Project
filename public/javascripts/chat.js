@@ -1,15 +1,16 @@
 const socket = io();
 
 $(document).ready(async () => {	
-	let username = $("#username").text();
-	
-	// Sending name to userlist
-	socket.emit("join", username);
+	// Sending username to server on connect
+	socket.emit("join", $("#username").text());
 
+	/* User list functions*/
+	// Adding users to Users Online table
 	socket.on("join", (username) => {
 		$("#userTable").append("<tr id='" + username + "'><td>" + username + "</td></tr>");
 	})
 
+	// Removing specific user from table when they disconnect
 	socket.on("updateUserList", (user) => {
 		$("#" + user).remove();
 	});
@@ -25,11 +26,16 @@ $(document).ready(async () => {
 
 	// Sending input box' message on send button press
 	$("#sendButton").on("click", async () => {
+		let username = $("#username").text();
 		let message = $('#messageBox').val();
 		if (username && message) {
-			$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
-			await socket.emit("chat", message, username, Date.now());			
-			$('#messageBox').val("");
+			if (message.charAt(0) === "/") {
+				$('#messageBox').val("");
+			} else {
+				$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
+				await socket.emit("chat", message, username, Date.now());			
+				$('#messageBox').val("");
+			}
 		}
 	});
 
@@ -39,11 +45,21 @@ $(document).ready(async () => {
 			let username = $("#username").text();
 			let message = $('#messageBox').val();
 			if (username && message) {
-				$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
-				await socket.emit("chat", message, username, Date.now());			
-				$('#messageBox').val("");
+				if (message.charAt(0) === "/") {
+					await socket.emit("command", message);
+					$('#messageBox').val("");
+				} else {
+					$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
+					await socket.emit("chat", message, username, Date.now());			
+					$('#messageBox').val("");
+				}
 			}
 		}
 	});
-});
 
+	// Expecting command response and adding to table
+	socket.on("command", (message) => {
+		let username = $("#username").text()
+		$("#messageTable").append("<tr><td>" + username + "</td><td>" + message + "</td></tr>")
+	});
+});

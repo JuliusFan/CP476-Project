@@ -8,6 +8,8 @@
 let app = require('../app');
 let debug = require('debug')('cp476t:server');
 let http = require('http');
+let https = require('https');
+let superagent = require('superagent');
 let User = require("../models/User");
 let Message = require("../models/Message");
 
@@ -148,4 +150,71 @@ io.on('connection', async (socket) => {
 		// Emiting to other clients using chatroom
 		socket.broadcast.emit("loadChatroom", message);
 	});
+
+	// Use of OpenWeatherMap weather API and Finnhub stock price API
+	socket.on("command", async (message) => {
+		// Parse commands into weather or stock + weather/stock location
+		let command = message.split(" ");
+
+		// Weather request
+		if (command.length > 1) {
+			if (command[0] === "/weather") {
+				try {
+					// API request to OpenWeatherMap
+					await http.get('http://api.openweathermap.org/data/2.5/weather?units=metric&appid=cf5f563744765ed1790a74d1702a36fd&q=' + command[1], (resp) => {
+						let data = '';
+						resp.on('data', (chunk) => {
+							data += chunk;
+						});
+						resp.on('end', () => {
+							try {
+								// Setting output city to sentence case
+								let city =  command[1].split(",")[0];
+								city = city.toLowerCase();
+								city = city.charAt(0).toUpperCase() + city.slice(1);
+
+								// Emitting city temperature information to client
+								socket.emit("command", city + "'s temperature is: " + JSON.parse(data).main.temp) + " degrees celsius";
+							} catch (err) {
+								console.log("Server weather emittance error: " + err.message + " from user: " + socket.id);
+							}
+						});
+					});
+				} catch (err) {
+					console.log("Server weather request error: " + err.message + " from user: " + socket.id);
+				}
+
+			// Stock price request
+			} else if (command[0] === "/stock") {
+				try {
+					// API request to Finnhub.IO
+					await https.get('https://finnhub.io/api/v1/quote?token=bqjlppvrh5r9t8ht9r60&symbol=' + command[1].toUpperCase(), (resp) => {
+						let data = '';
+						resp.on('data', (chunk) => {
+							data += chunk;
+						});
+						resp.on('end', () => {
+							try {
+								// Emitting stock price information to client
+								socket.emit("command", command[1].toUpperCase() + "'s current price is: $" + JSON.parse(data).o + " USD");
+							} catch (err) {
+								console.log("Server stock emittance error: " + err.message + " from user: " + socket.id);
+							}
+						});
+					});
+				} catch (err) {
+					console.log("Server stock request error: " + err.message + " from user: " + socket.id);
+				}
+			}
+		}
+	});
 });
+
+// https://finnhub.io/api/v1/quote?symbol=AAPL&token=bqjlppvrh5r9t8ht9r60
+
+// o: Open price of the day
+// h: High price of the day
+// l: Low price of the day
+// c: Current price
+// pc: Previous close price
+
