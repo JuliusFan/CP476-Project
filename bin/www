@@ -9,7 +9,6 @@ let app = require('../app');
 let debug = require('debug')('cp476t:server');
 let http = require('http');
 let https = require('https');
-let superagent = require('superagent');
 let User = require("../models/User");
 let Message = require("../models/Message");
 
