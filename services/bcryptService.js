@@ -4,7 +4,7 @@ let bcrypt = require('bcrypt');
 let User = require("../services/databaseService").User;
 
 let encrypt = (password) => {
-    return bcrypt.hash(password, 10);
+    return bcrypt.hash(password, 12);
 }
 
 let compare = async (password, passwordHash) => {
