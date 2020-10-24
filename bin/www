@@ -6,7 +6,7 @@
  */
 
 let app = require('../app');
-let debug = require('debug')('cp476t:server');
+let debug = require('debug')('chatapp:server');
 let http = require('http');
 let https = require('https');
 let User = require("../models/User");
